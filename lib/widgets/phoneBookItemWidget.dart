@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phonebook/models/phoneItem.dart';
+import 'package:phonebook/screens/phoneBookInfo.dart';
 
 class phoneBookItemWidget extends StatelessWidget {
 
@@ -15,8 +16,10 @@ class phoneBookItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => {
-        //hero 라이브러리 사용할 것
-
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => phoneBookInfo(id : phoneBookItem.id))
+        ),
       },
       child: Container(
         padding: EdgeInsets.all(10),
@@ -25,10 +28,28 @@ class phoneBookItemWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(
+            phoneBookItem.profileImg == "" ?  Icon(
               Icons.account_circle_rounded,
               size: 50,
-            ),
+            ) : ClipOval(
+              child: Container(
+                width: 43,
+                height: 43,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: Hero(
+                  tag: phoneBookItem.id,
+                  child: Image.asset(
+                    phoneBookItem.profileImg,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+
+            )
+
+            ,
             SizedBox(
               width: 11,
             ),
