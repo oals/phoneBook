@@ -32,7 +32,7 @@ class phoneBookServices {
 
     phoneItemInfo phoneBookInfoItem = phoneItemInfo(
         id: phoneItem.id,
-        phoneMemo: "124124",
+        phoneMemo: "메모테스트",
         phoneBookItem: phoneItem,
         callHistory: phoneCallHistoryList
     );
