@@ -6,12 +6,14 @@ class phoneBookButtonWidget extends StatefulWidget {
   late int buttonOpt;
   late String buttonNm;
   late Function callback;
+  late Color btnColor;
 
   phoneBookButtonWidget({
     super.key,
     required this.buttonNm,
     required this.buttonOpt,
-    required this.callback
+    required this.callback,
+    required this.btnColor
   });
 
   @override
@@ -26,13 +28,14 @@ class _phoneBookButtonWidgetState extends State<phoneBookButtonWidget> {
         widget.callback(widget.buttonOpt)
       },
       child: Container(
+        width: 80,
+        height: 50,
         decoration: BoxDecoration(
-          color: Colors.blueGrey,
-          borderRadius: BorderRadius.circular(18)
+          color: Color(0xff505050),
+          borderRadius: BorderRadius.circular(10)
         ),
-        width: 100,
-        height: 100,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
@@ -40,16 +43,16 @@ class _phoneBookButtonWidgetState extends State<phoneBookButtonWidget> {
                 widget.buttonOpt == 2 ? Icons.call :
                 widget.buttonOpt == 3 ? Icons.video_camera_back :
                 Icons.mail_rounded,
-              color: Colors.white,
+              color: widget.btnColor
             ),
             SizedBox(
-              height: 10,
+              height: 3,
             ),
             Text(widget.buttonNm,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 8,
               fontWeight: FontWeight.w900,
-              color: Colors.white
+              color: widget.btnColor
             ),)
           ],
 

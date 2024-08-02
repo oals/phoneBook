@@ -47,6 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+          flexibleSpace: SafeArea(
+            child: Container(
+              color: Colors.black,
+            ),
+          ),
       ),
       body: pageWidgets[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
