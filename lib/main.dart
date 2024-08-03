@@ -44,21 +44,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-          flexibleSpace: SafeArea(
-            child: Container(
-              color: Colors.black,
-            ),
-          ),
-      ),
       body: Container(
         color: Colors.white,
         child: pageWidgets[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xff212221),
+        backgroundColor: Colors.black,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
@@ -67,8 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.format_list_bulleted_outlined,color: Colors.white,),
-              label: '연락처'
+              icon: Icon(Icons.format_list_bulleted_outlined,color: Colors.blueAccent,),
+              label: '연락처',
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.call,color: Colors.white,),
@@ -79,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
               label: '관리'
           ),
         ],
+        selectedItemColor: Colors.blueAccent
       ),
     );
   }

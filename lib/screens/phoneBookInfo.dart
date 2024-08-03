@@ -64,13 +64,10 @@ class _phoneBookInfoState extends State<phoneBookInfo> {
                               child: SizedBox(
                                 width: 100,
                                 height: 100,
-                                child: Hero(
-                                  tag: phoneBookInfo.id,
-                                  child: Image.asset(
+                                child: Image.asset(
                                     '../assets/winter.jpg',
                                     fit: BoxFit.cover,
                                   ),
-                                ),
                               ),
                             ),
                           ),

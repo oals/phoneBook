@@ -16,10 +16,7 @@ class phoneBookItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => phoneBookInfo(id : phoneBookItem.id))
-        ),
+        navigateToPhoneBookInfo(context,phoneBookItem.id)
       },
       child: Container(
         padding: EdgeInsets.all(10),
@@ -27,31 +24,6 @@ class phoneBookItemWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            phoneBookItem.profileImg == "" ?  Icon(
-              Icons.account_circle_rounded,
-              size: 50,
-            ) : ClipOval(
-              child: Container(
-                width: 43,
-                height: 43,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: Hero(
-                  tag: phoneBookItem.id,
-                  child: Image.asset(
-                    phoneBookItem.profileImg,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-
-            )
-
-            ,
-            SizedBox(
-              width: 11,
-            ),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,21 +32,38 @@ class phoneBookItemWidget extends StatelessWidget {
                     phoneBookItem.name,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ],
               ),
-            ),
-            Icon(
-              phoneBookItem.bookMark ? Icons.star_outlined : Icons.star_border_purple500_outlined,
-              size: 30,
-              color: Colors.blue,
             ),
           ],
         ),
       ),
     );
   }
+}
+
+
+void navigateToPhoneBookInfo(BuildContext context, int id) {
+  Navigator.push(
+    context,
+    PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) {
+        return phoneBookInfo(id: id);
+      },
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1.0, 0.0);
+        const end = Offset.zero;
+        const curve = Curves.easeInOut;
+
+        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var offsetAnimation = animation.drive(tween);
+
+        return SlideTransition(position: offsetAnimation, child: child);
+      },
+    ),
+  );
 }
