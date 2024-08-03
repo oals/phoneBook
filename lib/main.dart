@@ -53,8 +53,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
       ),
-      body: pageWidgets[_currentIndex],
+      body: Container(
+        color: Colors.white,
+        child: pageWidgets[_currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xff212221),
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
@@ -63,15 +67,15 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.format_list_bulleted_outlined),
-              label: '전화번호부'
+              icon: Icon(Icons.format_list_bulleted_outlined,color: Colors.white,),
+              label: '연락처'
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.call),
+              icon: Icon(Icons.call,color: Colors.white,),
               label: '전화'
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.settings,color: Colors.white,),
               label: '관리'
           ),
         ],

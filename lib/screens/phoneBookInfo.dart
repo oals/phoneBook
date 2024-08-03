@@ -41,6 +41,7 @@ class _phoneBookInfoState extends State<phoneBookInfo> {
 
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: SafeArea(
           child: Container(
             color: Color(0xff212221),

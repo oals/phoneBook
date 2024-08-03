@@ -23,7 +23,6 @@ class phoneBookItemWidget extends StatelessWidget {
       },
       child: Container(
         padding: EdgeInsets.all(10),
-        color: Colors.blue,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,13 +59,7 @@ class phoneBookItemWidget extends StatelessWidget {
                   Text(
                     phoneBookItem.name,
                     style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Text(
-                    phoneBookItem.phoneNumber,
-                    style: TextStyle(
+                      color: Colors.white,
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                     ),
@@ -77,7 +70,7 @@ class phoneBookItemWidget extends StatelessWidget {
             Icon(
               phoneBookItem.bookMark ? Icons.star_outlined : Icons.star_border_purple500_outlined,
               size: 30,
-              color: Colors.yellow,
+              color: Colors.blue,
             ),
           ],
         ),
