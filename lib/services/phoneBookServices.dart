@@ -12,6 +12,14 @@ class phoneBookServices {
     phoneBook(id: 4, name: "햄스터", phoneNumber: "010-3263-7447", bookMark: true,profileImg: "../assets/winter.jpg"),
     phoneBook(id: 5, name: "다람쥐", phoneNumber: "010-7547-4574", bookMark: false,profileImg: ""),
     phoneBook(id: 6, name: "토끼", phoneNumber: "010-6743-7547", bookMark: false,profileImg: "../assets/winter.jpg"),
+    phoneBook(id: 7, name: "스꺼러", phoneNumber: "010-6436-7547", bookMark: false,profileImg: ""),
+    phoneBook(id: 8, name: "햄스터", phoneNumber: "010-3263-7447", bookMark: true,profileImg: "../assets/winter.jpg"),
+    phoneBook(id: 9, name: "다람쥐", phoneNumber: "010-7547-4574", bookMark: false,profileImg: ""),
+    phoneBook(id: 10, name: "토끼", phoneNumber: "010-6743-7547", bookMark: false,profileImg: "../assets/winter.jpg"),
+    phoneBook(id: 11, name: "스꺼러", phoneNumber: "010-6436-7547", bookMark: false,profileImg: ""),
+    phoneBook(id: 12, name: "햄스터", phoneNumber: "010-3263-7447", bookMark: true,profileImg: "../assets/winter.jpg"),
+    phoneBook(id: 13, name: "다람쥐", phoneNumber: "010-7547-4574", bookMark: false,profileImg: ""),
+    phoneBook(id: 14, name: "토끼", phoneNumber: "010-6743-7547", bookMark: false,profileImg: "../assets/winter.jpg"),
   ];
 
   List<phoneCallHistoryItem> phoneCallHistoryList = [
