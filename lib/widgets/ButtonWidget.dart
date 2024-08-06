@@ -1,14 +1,14 @@
 
 import 'package:flutter/material.dart';
 
-class phoneBookButtonWidget extends StatefulWidget {
+class ButtonWidget extends StatefulWidget {
 
   late int buttonOpt;
   late String buttonNm;
   late Function callback;
   late Color btnColor;
 
-  phoneBookButtonWidget({
+  ButtonWidget({
     super.key,
     required this.buttonNm,
     required this.buttonOpt,
@@ -17,10 +17,10 @@ class phoneBookButtonWidget extends StatefulWidget {
   });
 
   @override
-  State<phoneBookButtonWidget> createState() => _phoneBookButtonWidgetState();
+  State<ButtonWidget> createState() => _ButtonWidgetState();
 }
 
-class _phoneBookButtonWidgetState extends State<phoneBookButtonWidget> {
+class _ButtonWidgetState extends State<ButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

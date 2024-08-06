@@ -1,4 +1,4 @@
-class phoneBook {
+class PhoneBook {
 
   int id;
   String name = "";
@@ -6,7 +6,7 @@ class phoneBook {
   bool bookMark = false;
   String profileImg = "";
 
-  phoneBook({
+  PhoneBook({
     required this.id ,required this.name, required this.phoneNumber, required this.bookMark, required this.profileImg
   });
 

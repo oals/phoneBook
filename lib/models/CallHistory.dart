@@ -1,10 +1,10 @@
-class phoneCallHistoryItem {
+class PhoneCallHistoryItem {
 
   bool missedCall;
   String callDuration;
   String callTime;
 
-  phoneCallHistoryItem({
+  PhoneCallHistoryItem({
     required this.missedCall,
     required this.callDuration,
     required this.callTime,

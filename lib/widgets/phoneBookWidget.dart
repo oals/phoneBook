@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:phonebook/models/phoneItem.dart';
-import 'package:phonebook/screens/phoneBookInfo.dart';
+import 'package:phonebook/models/phoneBook.dart';
+import 'package:phonebook/screens/phoneBookInfoScreen.dart';
 
-class phoneBookItemWidget extends StatelessWidget {
+class phoneBookWidget extends StatelessWidget {
 
-  late phoneBook phoneBookItem;
+  late PhoneBook phoneBookItem;
 
-  phoneBookItemWidget({
+  phoneBookWidget({
     super.key,
     required this.phoneBookItem,
   });
@@ -52,7 +52,7 @@ void navigateToPhoneBookInfo(BuildContext context, int id) {
     context,
     PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) {
-        return phoneBookInfo(id: id);
+        return phoneBookInfoScreen(id: id);
       },
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(1.0, 0.0);

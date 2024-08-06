@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:phonebook/models/phoneItem.dart';
+import 'package:phonebook/models/phoneBook.dart';
 import 'package:phonebook/services/phoneBookServices.dart';
 
-import '../widgets/phoneBookItemWidget.dart';
+import '../widgets/phoneBookWidget.dart';
 
 
 class Phonebooklist extends StatefulWidget {
@@ -18,8 +18,8 @@ class Phonebooklist extends StatefulWidget {
 
 class _PhonebooklistState extends State<Phonebooklist> with SingleTickerProviderStateMixin{
 
-  late List<phoneBook> phoneBookItemList = [];
-  late List<phoneBook> searchPhoneBookItemList = [];
+  late List<PhoneBook> phoneBookItemList = [];
+  late List<PhoneBook> searchPhoneBookItemList = [];
   bool searchBar = false;
 
   @override
@@ -127,7 +127,7 @@ class _PhonebooklistState extends State<Phonebooklist> with SingleTickerProvider
                         },
                         itemCount: !searchBar ? phoneBookItemList.length : phoneBookItemList.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return phoneBookItemWidget(phoneBookItem: !searchBar ? phoneBookItemList[index] : phoneBookItemList[index]);
+                          return phoneBookWidget(phoneBookItem: !searchBar ? phoneBookItemList[index] : phoneBookItemList[index]);
                         },
                       ),
                     )
